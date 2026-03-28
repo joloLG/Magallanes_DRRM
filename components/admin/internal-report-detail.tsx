@@ -783,10 +783,10 @@ export function InternalReportDetail({ report, patients, barangayName, incidentT
       )}>
         <header ref={headerRef} className="flex flex-col gap-6 border-b border-gray-200 pb-6">
           <div className="flex items-center justify-between">
-            <Image src="/images/bulan-logo.png" alt="Bulan Municipality Logo" width={80} height={80} className="h-16 w-auto" />
+            <Image src="/images/bulan-logo.png" alt="Magallanes Municipality Logo" width={80} height={80} className="h-16 w-auto" />
             <div className="text-center">
               <p className="text-xs uppercase tracking-wide text-gray-500">Republic of the Philippines</p>
-              <p className="text-sm font-semibold uppercase text-gray-700">Local Government Unit of Bulan Sorsogon</p>
+              <p className="text-sm font-semibold uppercase text-gray-700">Local Government Unit of Magallanes Sorsogon</p>
               <p className="text-base font-bold uppercase text-gray-800">Municipal Disaster Risk Reduction and Management Office</p>
             </div>
             <Image src="/images/logo.png" alt="MDRRMO Logo" width={80} height={80} className="h-16 w-auto" />

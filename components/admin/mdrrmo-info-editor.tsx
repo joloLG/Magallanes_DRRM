@@ -99,7 +99,7 @@ export function MdrrmoInfoEditor() {
         <CardHeader className="bg-orange-800 text-black flex justify-between items-center">
           <div className="flex items-center">
             <Info className="mr-2 h-5 w-5" />
-            <span>Edit MDRRMO-Bulan Information</span>
+            <span>Edit MDRRMO-Magallanes Information</span>
           </div>
           <div className="w-24"></div> 
         </CardHeader>
@@ -119,13 +119,13 @@ export function MdrrmoInfoEditor() {
         </CardTitle>
         <div className="flex items-center">
           <Info className="mr-2 h-5 w-5" />
-          <span>Edit MDRRMO-Bulan Information</span>
+          <span>Edit MDRRMO-Magalallanes Information</span>
         </div>
         <div className="w-24"></div> {/* Spacer for balance */}
       </CardHeader>
       <CardContent className="p-6">
         <div className="space-y-4">
-          <p className="text-black-700">Update the general information about MDRRMO-Bulan that users will see on their dashboard.</p>
+          <p className="text-black-700">Update the general information about MDRRMO-Magallanes that users will see on their dashboard.</p>
           <div>
             <label htmlFor="mdrrmo-content" className="block text-sm font-medium text-gray-700 mb-1">
               Information Content
@@ -135,7 +135,7 @@ export function MdrrmoInfoEditor() {
               value={mdrrmoInfoContent}
               onChange={(e) => setMdrrmoInfoContent(e.target.value)}
               rows={10}
-              placeholder="Enter MDRRMO-Bulan information here..."
+              placeholder="Enter MDRRMO-Magallanes information here..."
               className="w-full"
             />
           </div>

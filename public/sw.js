@@ -258,6 +258,11 @@ self.addEventListener('fetch', event => {
       return
     }
     if (request.url.startsWith(self.location.origin)) {
+      // Skip caching for heatmap API to always get fresh data
+      if (request.url.includes('/api/heatmap')) {
+        event.respondWith(fetch(request))
+        return
+      }
       event.respondWith(cacheFirst(request))
       return
     }

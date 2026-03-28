@@ -418,7 +418,7 @@ export function LoginPage({ onLoginSuccess, onGoToRegister, onGoToRoleSelection 
                   <div className="mt-4 pt-4 border-t border-gray-200 space-y-2">
                     <p className="text-xs text-gray-600 font-medium mb-2">Install MDRRMO App:</p>
                     <div className="flex flex-col sm:flex-row gap-2">
-                      <Button
+                    {  /* <Button
                         type="button"
                         variant="outline"
                         size="sm"
@@ -427,7 +427,7 @@ export function LoginPage({ onLoginSuccess, onGoToRegister, onGoToRoleSelection 
                       >
                         <Download className="w-3 h-3 mr-1" />
                         Download APK
-                      </Button>
+                      </Button> */}
                       {installPromptEvent && (
                         <Button
                           type="button"
@@ -459,7 +459,7 @@ export function LoginPage({ onLoginSuccess, onGoToRegister, onGoToRoleSelection 
                   </div>
                 )}
                 
-                <p className="text-xs text-gray-500 mt-2">Copyright © 2025 | Jolo Gracilla</p>
+                <p className="text-xs text-gray-500 mt-2">Copyright © 2025 - 2026 | John Lloyd L. Gracilla</p>
                 
                 {/* Shake Gesture Indicator */}
                 {shakeActive && (

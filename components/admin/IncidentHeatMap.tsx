@@ -34,10 +34,10 @@ interface IncidentHeatMapProps {
   erTeams: BaseEntry[]
 }
 
-const BULAN_CENTER: [number, number] = [12.6718, 123.8755]
-const BULAN_BOUNDS: [[number, number], [number, number]] = [
-  [12.6305, 123.8225],
-  [12.7125, 123.923]
+const MAGALLANES_CENTER: [number, number] = [12.8367, 123.8755]
+const MAGALLANES_BOUNDS: [[number, number], [number, number]] = [
+  [12.7955, 123.8225],
+  [12.8775, 123.923]
 ]
 
 export function IncidentHeatMap({ barangays, incidentTypes, erTeams }: IncidentHeatMapProps) {
@@ -90,11 +90,11 @@ export function IncidentHeatMap({ barangays, incidentTypes, erTeams }: IncidentH
 
       const map = L.map(el, {
         zoomControl: true,
-        center: BULAN_CENTER,
+        center: MAGALLANES_CENTER,
         zoom: 12,
         minZoom: 10,
         maxZoom: 18,
-        maxBounds: BULAN_BOUNDS,
+        maxBounds: MAGALLANES_BOUNDS,
         maxBoundsViscosity: 1.0,
       })
 
@@ -111,7 +111,7 @@ export function IncidentHeatMap({ barangays, incidentTypes, erTeams }: IncidentH
       }
 
       map.whenReady(() => {
-        map.fitBounds(BULAN_BOUNDS, { padding: [20, 20] })
+        map.fitBounds(MAGALLANES_BOUNDS, { padding: [20, 20] })
 
         // Add geo-fencing event listeners
         map.on('moveend', () => {
@@ -119,10 +119,10 @@ export function IncidentHeatMap({ barangays, incidentTypes, erTeams }: IncidentH
           const currentCenter = map.getCenter()
 
           // Check if center is outside allowed bounds
-          if (currentCenter.lat < BULAN_BOUNDS[0][0] || currentCenter.lat > BULAN_BOUNDS[1][0] ||
-              currentCenter.lng < BULAN_BOUNDS[0][1] || currentCenter.lng > BULAN_BOUNDS[1][1]) {
-            console.log('[heatmap] Map moved outside Bulan bounds, recentering...')
-            map.panTo(BULAN_CENTER)
+          if (currentCenter.lat < MAGALLANES_BOUNDS[0][0] || currentCenter.lat > MAGALLANES_BOUNDS[1][0] ||
+              currentCenter.lng < MAGALLANES_BOUNDS[0][1] || currentCenter.lng > MAGALLANES_BOUNDS[1][1]) {
+            console.log('[heatmap] Map moved outside Magallanes bounds, recentering...')
+            map.panTo(MAGALLANES_CENTER)
           }
         })
 
@@ -131,12 +131,12 @@ export function IncidentHeatMap({ barangays, incidentTypes, erTeams }: IncidentH
           // If the dragged view is outside bounds, snap back
           const sw = bounds.getSouthWest()
           const ne = bounds.getNorthEast()
-          const isOutsideBounds = sw.lat < BULAN_BOUNDS[0][0] || ne.lat > BULAN_BOUNDS[1][0] ||
-                                  sw.lng < BULAN_BOUNDS[0][1] || ne.lng > BULAN_BOUNDS[1][1]
+          const isOutsideBounds = sw.lat < MAGALLANES_BOUNDS[0][0] || ne.lat > MAGALLANES_BOUNDS[1][0] ||
+                                  sw.lng < MAGALLANES_BOUNDS[0][1] || ne.lng > MAGALLANES_BOUNDS[1][1]
 
           if (isOutsideBounds) {
-            console.log('[heatmap] Drag moved outside Bulan bounds, recentering...')
-            map.panTo(BULAN_CENTER)
+            console.log('[heatmap] Drag moved outside Magallanes bounds, recentering...')
+            map.panTo(MAGALLANES_CENTER)
           }
         })
 
@@ -266,22 +266,22 @@ export function IncidentHeatMap({ barangays, incidentTypes, erTeams }: IncidentH
 
     const latValues = [
       ...heatData.map(p => p[0]),
-      BULAN_BOUNDS[0][0],
-      BULAN_BOUNDS[1][0]
-    ].filter(lat => lat >= BULAN_BOUNDS[0][0] && lat <= BULAN_BOUNDS[1][0])
+      MAGALLANES_BOUNDS[0][0],
+      MAGALLANES_BOUNDS[1][0]
+    ].filter(lat => lat >= MAGALLANES_BOUNDS[0][0] && lat <= MAGALLANES_BOUNDS[1][0])
 
     const lngValues = [
       ...heatData.map(p => p[1]),
-      BULAN_BOUNDS[0][1],
-      BULAN_BOUNDS[1][1]
-    ].filter(lng => lng >= BULAN_BOUNDS[0][1] && lng <= BULAN_BOUNDS[1][1])
+      MAGALLANES_BOUNDS[0][1],
+      MAGALLANES_BOUNDS[1][1]
+    ].filter(lng => lng >= MAGALLANES_BOUNDS[0][1] && lng <= MAGALLANES_BOUNDS[1][1])
 
-    // Ensure we have valid bounds within Bulan area
+    // Ensure we have valid bounds within Magallanes area
     if (latValues.length > 0 && lngValues.length > 0) {
-      const minLat = Math.max(BULAN_BOUNDS[0][0], Math.min(...latValues))
-      const maxLat = Math.min(BULAN_BOUNDS[1][0], Math.max(...latValues))
-      const minLng = Math.max(BULAN_BOUNDS[0][1], Math.min(...lngValues))
-      const maxLng = Math.min(BULAN_BOUNDS[1][1], Math.max(...lngValues))
+      const minLat = Math.max(MAGALLANES_BOUNDS[0][0], Math.min(...latValues))
+      const maxLat = Math.min(MAGALLANES_BOUNDS[1][0], Math.max(...latValues))
+      const minLng = Math.max(MAGALLANES_BOUNDS[0][1], Math.min(...lngValues))
+      const maxLng = Math.min(MAGALLANES_BOUNDS[1][1], Math.max(...lngValues))
 
       const padding = heatData.length > 0 ? 0.001 : 0
       mapRef.current.fitBounds([
@@ -289,8 +289,8 @@ export function IncidentHeatMap({ barangays, incidentTypes, erTeams }: IncidentH
         [maxLat + padding, maxLng + padding]
       ], { padding: [20, 20], maxZoom: 16 })
     } else {
-      // No valid points within bounds, center on Bulan
-      mapRef.current.setView(BULAN_CENTER, 12)
+      // No valid points within bounds, center on Magallanes
+      mapRef.current.setView(MAGALLANES_CENTER, 12)
     }
     hasAutoFittedRef.current = true
   }, [points])

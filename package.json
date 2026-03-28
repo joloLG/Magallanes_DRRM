@@ -6,7 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:export": "node scripts/export-database.js",
+    "db:clone": "powershell -ExecutionPolicy Bypass -File scripts/clone-database.ps1",
+    "db:clone-batch": "scripts/clone-database.bat",
+    "db:complete-clone": "powershell -ExecutionPolicy Bypass -File scripts/complete-clone.ps1",
+    "db:full-clone": "node scripts/complete-database-clone.js",
+    "db:simple-clone": "node scripts/simple-clone.js",
+    "db:types": "npx supabase gen types typescript --local > types/supabase.ts"
   },
   "dependencies": {
     "@capacitor/android": "^7.4.3",
@@ -38,6 +45,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.0.0",
     "date-fns": "^4.1.0",
+    "dotenv": "^17.3.1",
     "firebase": "^11.10.0",
     "google-auth-library": "^9.14.1",
     "html2canvas": "^1.4.1",
@@ -72,6 +80,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.0.0",
     "postcss": "^8.5.6",
+    "supabase": "^2.84.4",
     "tailwindcss": "^3.4.17",
     "typescript": "^5"
   }

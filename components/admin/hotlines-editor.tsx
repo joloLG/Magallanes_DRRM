@@ -172,7 +172,7 @@ export function HotlinesEditor() {
         </div>
         <div className="flex items-center">
           <Phone className="mr-3" />
-          <span>Edit Bulan Hotlines</span>
+          <span>Edit Magallanes Hotlines</span>
         </div>
         <div className="w-24"></div> {/* Spacer for balance */}
       </CardHeader>
@@ -193,7 +193,7 @@ export function HotlinesEditor() {
         </div>
         <div className="flex items-center">
           <Phone className="mr-3" />
-          <span>Edit Bulan Hotlines</span>
+          <span>Edit Magallanes Hotlines</span>
         </div>
         <div className="w-24"></div> 
       </CardHeader>

@@ -1792,13 +1792,13 @@ export function Dashboard({ onLogout, userData }: DashboardProps) {
               </button>
               
               <div className="hidden md:flex items-center space-x-3 ml-2">
-                <span className="font-medium text-lg">BULAN EMERGENCY APP</span>
+                <span className="font-medium text-lg">MAGALLANES EMERGENCY APP</span>
               </div>
             </div>
 
             <div className="text-center flex-1">
               <h1 className="text-xl sm:text-2xl font-bold">MDRRMO</h1>
-              <p className="text-sm sm:text-base text-orange-100">Bulan Emergency App</p>
+              <p className="text-sm sm:text-base text-orange-100">Magallanes Emergency App</p>
             </div>
 
             <div className="flex items-center space-x-4">
@@ -1892,7 +1892,7 @@ export function Dashboard({ onLogout, userData }: DashboardProps) {
                     className="w-20 h-20 object-contain mb-2 mx-auto"
                     style={{ maxWidth: '80px', maxHeight: '80px' }}
                   />
-                  <CardTitle className="text-lg sm:text-xl font-bold text-orange-700 text-center mt-2">WELCOME TO MDRRMO BULAN EMERGENCY APP</CardTitle>
+                  <CardTitle className="text-lg sm:text-xl font-bold text-orange-700 text-center mt-2">WELCOME TO MDRRMO MAGALLANES EMERGENCY APP</CardTitle>
                 </CardHeader>
                 <CardContent className="text-center text-gray-700 text-sm sm:text-base">
                   MAARI LAMANG I-ISKROL PAIBABA AT PUMILI NG TAMANG KLASENG INSIDENTE PARA MAKAPAG-REPORT
@@ -2183,7 +2183,7 @@ export function Dashboard({ onLogout, userData }: DashboardProps) {
               <CardHeader>
                 <CardTitle className="text-xl sm:text-2xl font-bold text-gray-800 flex items-center">
                   <Info className="mr-2 h-6 w-6 text-blue-600" />
-                  Bulan Information
+                  Magallanes Information
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -2202,7 +2202,7 @@ export function Dashboard({ onLogout, userData }: DashboardProps) {
               <CardHeader>
                 <CardTitle className="text-xl sm:text-2xl font-bold text-gray-800 flex items-center">
                   <Phone className="mr-2 h-6 w-6 text-green-600" />
-                  Emergency Hotlines
+                  Magallanes Emergency Hotlines
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -2632,7 +2632,7 @@ export function Dashboard({ onLogout, userData }: DashboardProps) {
     {/* Bottom Navigation */}
     <div className="fixed bottom-0 left-0 right-0 bg-orange-500/95 backdrop-blur-sm text-white p-4 z-10 safe-bottom">
       <div className="flex justify-center items-center">
-        <span className="text-xs sm:text-sm font-medium">Copyright © 2025 | Jolo Gracilla</span>
+        <span className="text-xs sm:text-sm font-medium">Copyright © 2025 - 2026 | John Lloyd L. Gracilla</span>
       </div>
     </div>
   </div>

@@ -15,7 +15,7 @@ interface UserSidebarProps {
 const menuItems = [
   { id: 'main', icon: AlertTriangle, label: 'Main Dashboard', type: 'internal' },
   { id: 'reportHistory', icon: History, label: 'Report History', type: 'internal' },
-  { id: 'mdrrmoInfo', icon: Info, label: 'Bulan Information Hotlines', type: 'internal' },
+  { id: 'mdrrmoInfo', icon: Info, label: 'Magallanes Hotlines', type: 'internal' },
   { id: 'incidentPosts', icon: AlertTriangle, label: 'MDRRMO Incident Posts', type: 'internal' },
   { id: 'userProfile', icon: User, label: 'User Profile', type: 'internal' },
   { id: 'sendFeedback', icon: Mail, label: 'Send Feedback', type: 'internal' },
@@ -139,8 +139,8 @@ export function UserSidebar({ isOpen, onClose, onChangeView }: UserSidebarProps)
                 className="w-full justify-start text-white bg-purple-600 hover:bg-purple-700 hover:text-white text-left h-auto py-3"
                 onClick={() => window.open('https://github.com/joloLG/MDRRMO-System/releases/tag/1.1.9', '_blank', 'noopener,noreferrer')}
               >
-                <Download className="mr-3 h-5 w-5 flex-shrink-0 mt-0.5" />
-                <span className="break-words leading-tight">Download App</span>
+                <Download className="mr-3 h-5 w-5 flex-shrink-0 mt-0.5" />{/*
+                <span className="break-words leading-tight">Download App</span> */}
               </Button>
             )}
             {menuItems.map((item) => {
@@ -162,7 +162,7 @@ export function UserSidebar({ isOpen, onClose, onChangeView }: UserSidebarProps)
             })}
           </nav>
           <div className="mt-auto p-4 text-xs text-gray-400 border-t border-gray-700">
-            Copyright © 2025 | Jolo Gracilla
+            Copyright © 2025 - 2026 | John Lloyd L. Gracilla
           </div>
         </div>
       </aside>
