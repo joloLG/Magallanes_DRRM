@@ -294,14 +294,14 @@ export function LoginPage({ onLoginSuccess, onGoToRegister, onGoToRoleSelection 
       <div className="absolute inset-0 bg-black/40"></div>
 
       <Card className="w-full max-w-md bg-white/95 backdrop-blur-sm shadow-2xl relative z-10 auth-card-pop">
-        <CardHeader className="text-center bg-orange-500 text-white rounded-t-lg">
+        <CardHeader className="text-center bg-blue-800 text-white rounded-t-lg">
           <CardTitle className="text-2xl font-bold">MDRRMO Login</CardTitle>
-          <p className="text-orange-100">Emergency Reporting System</p>
+          <p className="text-blue-200">Emergency Reporting System</p>
         </CardHeader>
         <CardContent className="p-8 space-y-6">
           <div className="text-center mb-6">
             <div 
-              className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 cursor-pointer hover:bg-orange-200 transition-colors"
+              className="w-20 h-20 bg-blue-300 rounded-full flex items-center justify-center mx-auto mb-4 cursor-pointer hover:bg-blue-400 transition-colors"
               onClick={handleLogoClick}
             >
               <span className="text-3xl">🚨</span>
@@ -353,7 +353,7 @@ export function LoginPage({ onLoginSuccess, onGoToRegister, onGoToRoleSelection 
                     type="email"
                     value={loginData.email}
                     onChange={(e) => handleInputChange("email", e.target.value)}
-                    className="border-orange-200 focus:border-orange-500 mt-1"
+                    className="border-blue-600 focus:border-blue-700 mt-1"
                     placeholder="Enter your email"
                     required
                     disabled={isLoading}
@@ -371,7 +371,7 @@ export function LoginPage({ onLoginSuccess, onGoToRegister, onGoToRoleSelection 
                       type={showPassword ? "text" : "password"}
                       value={loginData.password}
                       onChange={(e) => handleInputChange("password", e.target.value)}
-                      className="border-orange-200 focus:border-orange-500 pr-10"
+                      className="border-blue-600 focus:border-blue-700 pr-10"
                       placeholder="Enter password"
                       required
                       disabled={isLoading}
@@ -390,7 +390,7 @@ export function LoginPage({ onLoginSuccess, onGoToRegister, onGoToRoleSelection 
 
                 <Button
                   type="submit"
-                  className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 text-lg"
+                  className="w-full bg-blue-800 hover:bg-blue-900 text-white font-bold py-3 text-lg"
                   disabled={isLoading}
                 >
                   {isLoading ? "Logging in..." : "LOGIN"}
@@ -400,7 +400,7 @@ export function LoginPage({ onLoginSuccess, onGoToRegister, onGoToRoleSelection 
               <div className="text-center space-y-2">
                 <p className="text-sm text-gray-600">
                   <span
-                    className="text-orange-500 font-medium cursor-pointer hover:underline"
+                    className="text-blue-800 font-medium cursor-pointer hover:underline"
                     onClick={() => setShowForgotPasswordModal(true)}
                   >
                     Forgot Password?
@@ -408,7 +408,7 @@ export function LoginPage({ onLoginSuccess, onGoToRegister, onGoToRoleSelection 
                 </p>
                 <p className="text-sm text-gray-600">
                   Don't have an account?{" "}
-                  <span className="text-orange-500 font-medium cursor-pointer hover:underline" onClick={onGoToRegister}>
+                  <span className="text-blue-800 font-medium cursor-pointer hover:underline" onClick={onGoToRegister}>
                     Register here
                   </span>
                 </p>
@@ -422,7 +422,7 @@ export function LoginPage({ onLoginSuccess, onGoToRegister, onGoToRoleSelection 
                         type="button"
                         variant="outline"
                         size="sm"
-                        className="flex-1 text-xs border-orange-300 text-orange-600 hover:bg-orange-50"
+                        className="flex-1 text-xs border-blue-600 text-blue-800 hover:bg-blue-100"
                         onClick={() => window.open('https://github.com/joloLG/MDRRMO-System/releases/tag/1.1.9', '_blank', 'noopener,noreferrer')}
                       >
                         <Download className="w-3 h-3 mr-1" />
@@ -463,9 +463,9 @@ export function LoginPage({ onLoginSuccess, onGoToRegister, onGoToRoleSelection 
                 
                 {/* Shake Gesture Indicator */}
                 {shakeActive && (
-                  <div className="mt-3 p-2 bg-orange-100 border border-orange-300 rounded-md text-center">
-                    <Smartphone className="w-4 h-4 mx-auto mb-1 text-orange-600 animate-bounce" />
-                    <p className="text-xs text-orange-700 font-medium">Shaking... Keep shaking for auto-login!</p>
+                  <div className="mt-3 p-2 bg-blue-300 border border-blue-600 rounded-md text-center">
+                    <Smartphone className="w-4 h-4 mx-auto mb-1 text-blue-800 animate-bounce" />
+                    <p className="text-xs text-blue-900 font-medium">Shaking... Keep shaking for auto-login!</p>
                   </div>
                 )}
               </div>
@@ -500,7 +500,7 @@ export function LoginPage({ onLoginSuccess, onGoToRegister, onGoToRoleSelection 
                 type="email"
                 value={forgotPasswordEmail}
                 onChange={(e) => setForgotPasswordEmail(e.target.value)}
-                className="mt-1 border-gray-300 focus:border-orange-500"
+                className="mt-1 border-gray-300 focus:border-blue-700"
                 placeholder="your.email@example.com"
                 disabled={isLoading}
               />
@@ -521,7 +521,7 @@ export function LoginPage({ onLoginSuccess, onGoToRegister, onGoToRoleSelection 
               <Button
                 onClick={handleForgotPassword}
                 disabled={isLoading}
-                className="bg-orange-500 hover:bg-orange-600 text-white"
+                className="bg-blue-800 hover:bg-blue-900 text-white"
               >
                 {isLoading ? "Sending..." : "Send Reset Link"}
               </Button>

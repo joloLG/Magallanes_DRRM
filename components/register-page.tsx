@@ -462,9 +462,9 @@ export function RegisterPage({ onRegistrationSuccess, onGoToLogin, selectedRoleD
       <div className="absolute inset-0 bg-black/40"></div>
 
       <Card className="w-full max-w-md bg-white/95 backdrop-blur-sm shadow-2xl relative z-10 auth-card-pop">
-        <CardHeader className="text-center bg-orange-500 text-white rounded-t-lg">
+        <CardHeader className="text-center bg-blue-800 text-white rounded-t-lg">
           <CardTitle className="text-2xl font-bold">MDRRMO Registration</CardTitle>
-          <p className="text-orange-100">Emergency Reporting System</p>
+          <p className="text-blue-200">Emergency Reporting System</p>
         </CardHeader>
         <CardContent className="p-6">
           <form onSubmit={handleRegisterSubmit} className="space-y-4">
@@ -483,7 +483,7 @@ export function RegisterPage({ onRegistrationSuccess, onGoToLogin, selectedRoleD
                   id="firstName"
                   value={formData.firstName}
                   onChange={(e) => handleInputChange("firstName", e.target.value)}
-                  className="border-orange-200 focus:border-orange-500"
+                  className="border-blue-600 focus:border-blue-700"
                   required
                   disabled={isLoading}
                 />
@@ -496,7 +496,7 @@ export function RegisterPage({ onRegistrationSuccess, onGoToLogin, selectedRoleD
                   id="middleName"
                   value={formData.middleName}
                   onChange={(e) => handleInputChange("middleName", e.target.value)}
-                  className="border-orange-200 focus:border-orange-500"
+                  className="border-blue-600 focus:border-blue-700"
                   disabled={isLoading}
                 />
               </div>
@@ -511,7 +511,7 @@ export function RegisterPage({ onRegistrationSuccess, onGoToLogin, selectedRoleD
                   id="lastName"
                   value={formData.lastName}
                   onChange={(e) => handleInputChange("lastName", e.target.value)}
-                  className="border-orange-200 focus:border-orange-500"
+                  className="border-blue-600 focus:border-blue-700"
                   required
                   disabled={isLoading}
                 />
@@ -525,7 +525,7 @@ export function RegisterPage({ onRegistrationSuccess, onGoToLogin, selectedRoleD
                   type="email"
                   value={formData.email}
                   onChange={(e) => handleInputChange("email", e.target.value)}
-                  className="border-orange-200 focus:border-orange-500"
+                  className="border-blue-600 focus:border-blue-700"
                   required
                   disabled={isLoading}
                 />
@@ -541,7 +541,7 @@ export function RegisterPage({ onRegistrationSuccess, onGoToLogin, selectedRoleD
                   id="username"
                   value={formData.username}
                   onChange={(e) => handleInputChange("username", e.target.value)}
-                  className="border-orange-200 focus:border-orange-500"
+                  className="border-blue-600 focus:border-blue-700"
                   required
                   disabled={isLoading}
                 />
@@ -621,13 +621,13 @@ export function RegisterPage({ onRegistrationSuccess, onGoToLogin, selectedRoleD
                       maxLength={6}
                       placeholder="Enter code"
                       disabled={isLoading || isOtpVerified}
-                      className="w-28 sm:w-32 border-orange-200 focus:border-orange-500"
+                      className="w-28 sm:w-32 border-blue-600 focus:border-blue-700"
                     />
                     <Button
                       type="button"
                       onClick={handleSendOtp}
                       disabled={isLoading || isSendingOtp || resendTimer > 0 || formData.mobileNumber.length !== 11 || isOtpVerified}
-                      className="bg-orange-500 hover:bg-orange-600 text-white"
+                      className="bg-blue-800 hover:bg-blue-900 text-white"
                     >
                       {isSendingOtp ? "Sending..." : resendTimer > 0 ? `Resend in ${resendTimer}s` : isOtpVerified ? "Verified" : "Send OTP"}
                     </Button>
@@ -657,7 +657,7 @@ export function RegisterPage({ onRegistrationSuccess, onGoToLogin, selectedRoleD
                     type={showPassword ? "text" : "password"}
                     value={formData.password}
                     onChange={(e) => handleInputChange("password", e.target.value)}
-                    className={`border-orange-200 focus:border-orange-500 pr-10 ${(passwordInvalid || passwordsMismatch) ? 'border-red-500 focus:border-red-500' : ''}`}
+                    className={`border-blue-600 focus:border-blue-700 pr-10 ${(passwordInvalid || passwordsMismatch) ? 'border-red-500 focus:border-red-500' : ''}`}
                     aria-invalid={passwordInvalid || passwordsMismatch}
                     aria-describedby="password-help password-rules password-mismatch"
                     required
@@ -714,7 +714,7 @@ export function RegisterPage({ onRegistrationSuccess, onGoToLogin, selectedRoleD
                     type={showConfirmPassword ? "text" : "password"}
                     value={formData.confirmPassword}
                     onChange={(e) => handleInputChange("confirmPassword", e.target.value)}
-                    className={`border-orange-200 focus:border-orange-500 pr-10 ${passwordsMismatch ? 'border-red-500 focus:border-red-500' : ''}`}
+                    className={`border-blue-600 focus:border-blue-700 pr-10 ${passwordsMismatch ? 'border-red-500 focus:border-red-500' : ''}`}
                     aria-invalid={passwordsMismatch}
                     aria-describedby="password-mismatch"
                     required
@@ -748,7 +748,7 @@ export function RegisterPage({ onRegistrationSuccess, onGoToLogin, selectedRoleD
                       setAcceptedTerms(false)
                     }
                   }}
-                  className="border-orange-500 data-[state=checked]:bg-orange-500 data-[state=checked]:text-white"
+                  className="border-blue-800 data-[state=checked]:bg-blue-800 data-[state=checked]:text-white"
                 />
               </div>
               <div className="grid gap-1.5 leading-none">
@@ -757,16 +757,18 @@ export function RegisterPage({ onRegistrationSuccess, onGoToLogin, selectedRoleD
                   className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
                 >
                   I accept the{' '}
-                  <button
+                  <Button
                     type="button"
+                    variant="outline"
+                    size="sm"
                     onClick={(e) => {
                       e.preventDefault()
                       setShowTerms(true)
                     }}
-                    className="text-orange-500 hover:underline font-medium"
+                    className="text-blue-800 border-blue-800 hover:bg-blue-100 font-medium"
                   >
                     Terms and Conditions
-                  </button>
+                  </Button>
                 </label>
                 <p className="text-xs text-gray-500">
                   You must be at least 12 years old to register. By creating an account, you agree to our terms and conditions.
@@ -778,7 +780,7 @@ export function RegisterPage({ onRegistrationSuccess, onGoToLogin, selectedRoleD
             <Button
               type="submit"
               disabled={isLoading || !ageVerified || !acceptedTerms || passwordInvalid || passwordsMismatch || (OTP_ENABLED && !isOtpVerified)}
-              className={`w-full bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-4 rounded transition-colors ${
+              className={`w-full bg-blue-800 hover:bg-blue-900 text-white font-medium py-2 px-4 rounded transition-colors ${
                 (!ageVerified || !acceptedTerms || passwordInvalid || passwordsMismatch || (OTP_ENABLED && !isOtpVerified)) ? 'opacity-50 cursor-not-allowed' : ''
               }`}
             >
@@ -787,7 +789,7 @@ export function RegisterPage({ onRegistrationSuccess, onGoToLogin, selectedRoleD
 
             <p className="text-center text-sm text-gray-600 mt-4">
               Already have an account?{" "}
-              <span className="text-orange-500 font-medium cursor-pointer hover:underline" onClick={onGoToLogin}>
+              <span className="text-blue-800 font-medium cursor-pointer hover:underline" onClick={onGoToLogin}>
                 Login here
               </span>
             </p>
@@ -818,18 +820,18 @@ export function RegisterPage({ onRegistrationSuccess, onGoToLogin, selectedRoleD
             <p className="text-gray-600 mb-6">{success}</p>
             {requestedRole !== 'user' ? (
               <div className="w-full space-y-3">
-                <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
+                <div className="bg-blue-100 border border-blue-600 rounded-lg p-4">
                   <div className="flex items-start gap-3">
-                    <AlertTriangle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
+                    <AlertTriangle className="h-5 w-5 text-blue-800 mt-0.5 flex-shrink-0" />
                     <div className="text-left">
-                      <p className="text-sm font-medium text-orange-800">Still Waiting for MDRRMO Super Admin Approval</p>
-                      <p className="text-xs text-orange-700 mt-1">Kindly wait for a while. Thank you for your patience!</p>
+                      <p className="text-sm font-medium text-blue-900">Still Waiting for MDRRMO Super Admin Approval</p>
+                      <p className="text-xs text-blue-800 mt-1">Kindly wait for a while. Thank you for your patience!</p>
                     </div>
                   </div>
                 </div>
                 <Button 
                   asChild 
-                  className="w-full bg-orange-500 hover:bg-orange-600 text-white"
+                  className="w-full bg-blue-800 hover:bg-blue-900 text-white"
                   onClick={() => {
                     setShowSuccessModal(false)
                     onGoToLogin()
@@ -859,7 +861,7 @@ export function RegisterPage({ onRegistrationSuccess, onGoToLogin, selectedRoleD
           {/* Progress Bar */}
           <div className="absolute top-0 left-0 right-0 h-1 bg-gray-200 z-10">
             <div
-              className="h-full bg-orange-500 transition-all duration-300 ease-out"
+              className="h-full bg-blue-800 transition-all duration-300 ease-out"
               style={{ width: `${readingProgress}%` }}
             />
           </div>
@@ -868,14 +870,14 @@ export function RegisterPage({ onRegistrationSuccess, onGoToLogin, selectedRoleD
           <DialogHeader className="pt-6 pb-4 px-6 flex-shrink-0">
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-3">
-                <ScrollText className="h-6 w-6 text-orange-500" />
+                <ScrollText className="h-6 w-6 text-blue-800" />
                 <DialogTitle className="text-xl sm:text-2xl font-bold text-gray-800">
                   {translations[language].title}
                 </DialogTitle>
               </div>
               <Select value={language} onValueChange={(value: 'en' | 'tl') => setLanguage(value)}>
-                <SelectTrigger className="w-auto border-orange-500 text-orange-500 hover:bg-orange-50 h-8 px-3">
-                  <Languages className="h-4 w-4 mr-2" />
+                <SelectTrigger className="w-auto border-blue-800 text-blue-800 hover:bg-blue-100 h-8 px-3">
+                  <Languages className="h-4 w-4 mr-2 text-blue-800" />
                   <SelectValue placeholder="Language" />
                 </SelectTrigger>
                 <SelectContent>

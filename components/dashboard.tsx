@@ -141,7 +141,7 @@ const INCIDENT_TYPES = [
   { type: 'Vehicular Incident', icon: Car }, 
   { type: 'Weather Disturbance', icon: CloudRain }, 
   { type: 'Public Disturbance', icon: PersonStanding }, 
-  { type: 'Others', icon: (props: any) => <HelpCircle className="text-orange-500" {...props} /> },
+  { type: 'Others', icon: (props: any) => <HelpCircle className="text-blue-700" {...props} /> },
 ];
 
 const formatMobileNumberForInput = (value: string | null | undefined) => {
@@ -1774,7 +1774,7 @@ export function Dashboard({ onLogout, userData }: DashboardProps) {
       />
 
       <div className="relative min-h-screen">
-        <div className="sticky top-0 z-30 bg-orange-500/95 backdrop-blur-sm text-white p-4 shadow-lg safe-top">
+        <div className="sticky top-0 z-30 bg-blue-800/95 backdrop-blur-sm text-white p-4 shadow-lg safe-top">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <button 
@@ -1785,7 +1785,7 @@ export function Dashboard({ onLogout, userData }: DashboardProps) {
                     setIsSidebarOpen(!isSidebarOpen)
                   }
                 }} 
-                className="p-2 -ml-2 rounded-md hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-white"
+                className="p-2 -ml-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-white"
                 aria-label="Toggle menu"
               >
                 <Menu className="w-6 h-6" />
@@ -1798,7 +1798,7 @@ export function Dashboard({ onLogout, userData }: DashboardProps) {
 
             <div className="text-center flex-1">
               <h1 className="text-xl sm:text-2xl font-bold">MDRRMO</h1>
-              <p className="text-sm sm:text-base text-orange-100">Magallanes Emergency App</p>
+              <p className="text-sm sm:text-base text-blue-200">Magallanes Emergency App</p>
             </div>
 
             <div className="flex items-center space-x-4">
@@ -1806,7 +1806,7 @@ export function Dashboard({ onLogout, userData }: DashboardProps) {
                 <button
                   ref={notificationsButtonRef}
                   onClick={() => setShowNotifications(!showNotifications)}
-                  className="p-2 hover:bg-orange-600 rounded-full transition-colors relative"
+                  className="p-2 hover:bg-blue-700 rounded-full transition-colors relative"
                   aria-label={showNotifications ? 'Hide notifications' : 'Show notifications'}
                   aria-expanded={showNotifications}
                 >
@@ -1822,7 +1822,7 @@ export function Dashboard({ onLogout, userData }: DashboardProps) {
               <div className="relative">
                 <button
                   onClick={() => window.location.reload()}
-                  className="p-2 hover:bg-orange-600 rounded-full transition-colors"
+                  className="p-2 hover:bg-blue-700 rounded-full transition-colors"
                   aria-label="Refresh now"
                   title="Refresh now"
                 >
@@ -1832,7 +1832,7 @@ export function Dashboard({ onLogout, userData }: DashboardProps) {
 
               <div className="relative">
                 <div
-                  className="flex items-center space-x-2 cursor-pointer hover:bg-orange-600 p-2 rounded-full transition-colors"
+                  className="flex items-center space-x-2 cursor-pointer hover:bg-blue-700 p-2 rounded-full transition-colors"
                   onClick={handleUserMenuClick}
                 >
                   <User className="w-6 h-6" />
@@ -1874,17 +1874,17 @@ export function Dashboard({ onLogout, userData }: DashboardProps) {
             {currentView === 'main' && (
               <>
                 {activeAdvisory ? (
-                  <Card className="w-full max-w-2xl mx-auto mb-6 bg-white/90 backdrop-blur-sm shadow-lg rounded-lg border border-orange-300">
+                  <Card className="w-full max-w-2xl mx-auto mb-6 bg-white/90 backdrop-blur-sm shadow-lg rounded-lg border border-blue-600">
                     <CardHeader className="pb-2 flex flex-col items-center justify-center">
-                      <Megaphone className="w-12 h-12 text-orange-600 mb-2" />
-                      <CardTitle className="text-lg sm:text-xl font-bold text-orange-700 text-center mt-2">{activeAdvisory.title || 'MDRRMO Advisory'}</CardTitle>
+                      <Megaphone className="w-12 h-12 text-blue-800 mb-2" />
+                      <CardTitle className="text-lg sm:text-xl font-bold text-blue-900 text-center mt-2">{activeAdvisory.title || 'MDRRMO Advisory'}</CardTitle>
                     </CardHeader>
                     <CardContent className="text-center text-gray-700 text-sm sm:text-base whitespace-pre-wrap">
                       {activeAdvisory.body || ''}
                     </CardContent>
                   </Card>
                 ) : (
-              <Card className="w-full max-w-2xl mx-auto mb-6 bg-white/90 backdrop-blur-sm shadow-lg rounded-lg border border-orange-300">
+              <Card className="w-full max-w-2xl mx-auto mb-6 bg-white/90 backdrop-blur-sm shadow-lg rounded-lg border border-blue-600">
                 <CardHeader className="pb-2 flex flex-col items-center justify-center">
                   <img
                     src="/images/logo.png"
@@ -1892,7 +1892,7 @@ export function Dashboard({ onLogout, userData }: DashboardProps) {
                     className="w-20 h-20 object-contain mb-2 mx-auto"
                     style={{ maxWidth: '80px', maxHeight: '80px' }}
                   />
-                  <CardTitle className="text-lg sm:text-xl font-bold text-orange-700 text-center mt-2">WELCOME TO MDRRMO MAGALLANES EMERGENCY APP</CardTitle>
+                  <CardTitle className="text-lg sm:text-xl font-bold text-blue-900 text-center mt-2">WELCOME TO MDRRMO MAGALLANES EMERGENCY APP</CardTitle>
                 </CardHeader>
                 <CardContent className="text-center text-gray-700 text-sm sm:text-base">
                   MAARI LAMANG I-ISKROL PAIBABA AT PUMILI NG TAMANG KLASENG INSIDENTE PARA MAKAPAG-REPORT
@@ -1929,20 +1929,20 @@ export function Dashboard({ onLogout, userData }: DashboardProps) {
                   >
                     <div className={`
                       flex flex-col items-center justify-center p-5 sm:p-6 rounded-lg 
-                      bg-white/75 border-2 border-orange-400 shadow-md hover:shadow-lg 
+                      bg-white/75 border-2 border-blue-700 shadow-md hover:shadow-lg 
                       transition-all duration-200 h-full backdrop-blur-sm
-                      ${isSelected ? 'ring-2 ring-orange-500 scale-[1.02]' : ''}
-                      ${isDisabled ? 'bg-gray-100/75' : 'hover:bg-orange-50/75'}
+                      ${isSelected ? 'ring-2 ring-blue-700 scale-[1.02]' : ''}
+                      ${isDisabled ? 'bg-gray-100/75' : 'hover:bg-blue-100/75'}
                     `}>
                       <div className={`
                         w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center 
                         mb-3 transition-colors duration-200
-                        ${isDisabled ? 'bg-gray-300' : 'bg-orange-100 group-hover:bg-orange-200'}
-                        ${isSelected ? 'bg-orange-200' : ''}
+                        ${isDisabled ? 'bg-gray-300' : 'bg-blue-300 group-hover:bg-blue-400'}
+                        ${isSelected ? 'bg-blue-400' : ''}
                       `}>
                         <IconComponent className={`
                           w-8 h-8 sm:w-10 sm:h-10 
-                          ${isDisabled ? 'text-gray-600' : incident.type === 'Others' ? 'text-orange-500' : 'text-orange-600'}
+                          ${isDisabled ? 'text-gray-600' : incident.type === 'Others' ? 'text-blue-700' : 'text-blue-800'}
                         `} />
                       </div>
                       <span className={`
@@ -1953,7 +1953,7 @@ export function Dashboard({ onLogout, userData }: DashboardProps) {
                       </span>
                     </div>
                     {isSelected && !isDisabled && (
-                      <div className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center">
+                      <div className="absolute -top-2 -right-2 bg-blue-700 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center">
                         !
                       </div>
                     )}
@@ -2119,7 +2119,7 @@ export function Dashboard({ onLogout, userData }: DashboardProps) {
                           <div className="p-4 space-y-3">
                             <div className="flex items-start justify-between gap-3">
                               <h3 className="text-lg font-semibold text-gray-900 break-words flex-1">{post.title}</h3>
-                              <Badge variant="outline" className="shrink-0 border-orange-200 bg-orange-50 text-orange-700">
+                              <Badge variant="outline" className="shrink-0 border-blue-600 bg-blue-100 text-blue-900">
                                 {post.internal_report_id ? `Report #${post.internal_report_id}` : "Incident"}
                               </Badge>
                             </div>
@@ -2239,7 +2239,7 @@ export function Dashboard({ onLogout, userData }: DashboardProps) {
                   type="text"
                   value={editingUsername}
                   onChange={(e) => setEditingUsername(e.target.value)}
-                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-700"
                 />
               </div>
               <div>
@@ -2285,7 +2285,7 @@ export function Dashboard({ onLogout, userData }: DashboardProps) {
                           type="button"
                           onClick={sendProfileOtp}
                           disabled={isProfileOtpSending || profileOtpResendTimer > 0 || isProfileOtpVerified}
-                          className="bg-orange-500 hover:bg-orange-600 text-white"
+                          className="bg-blue-800 hover:bg-blue-900 text-white"
                         >
                           {isProfileOtpSending
                             ? 'Sending...'
@@ -2381,7 +2381,7 @@ export function Dashboard({ onLogout, userData }: DashboardProps) {
                   onChange={(e) => setFeedbackText(e.target.value.slice(0, FEEDBACK_MAX))}
                   rows={6}
                   placeholder="Describe the issue or request in detail..."
-                  className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 min-h-[160px] sm:min-h-[180px] text-sm sm:text-base ${feedbackTooShort ? 'focus:ring-red-500 border-red-300' : 'focus:ring-orange-500 border-gray-200'}`}
+                  className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 min-h-[160px] sm:min-h-[180px] text-sm sm:text-base ${feedbackTooShort ? 'focus:ring-red-500 border-red-300' : 'focus:ring-blue-700 border-gray-200'}`}
                 />
                 <div className="mt-2 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
                   <Button
@@ -2498,18 +2498,18 @@ export function Dashboard({ onLogout, userData }: DashboardProps) {
                     <span className="font-medium">Logout</span>
                   </div>
                 </AlertDialogTrigger>
-                <AlertDialogContent className="border-orange-200/50">
+                <AlertDialogContent className="border-blue-600/50">
                   <AlertDialogHeader>
-                    <AlertDialogTitle className="text-orange-900">Logout confirmation</AlertDialogTitle>
+                    <AlertDialogTitle className="text-blue-900">Logout confirmation</AlertDialogTitle>
                     <AlertDialogDescription>
                       Are you sure you want to logout? You will need to log in again to access the dashboard.
                     </AlertDialogDescription>
                   </AlertDialogHeader>
                   <AlertDialogFooter>
-                    <AlertDialogCancel className="border-orange-200 text-orange-700 hover:bg-orange-50">Cancel</AlertDialogCancel>
+                    <AlertDialogCancel className="border-blue-600 text-blue-800 hover:bg-blue-100">Cancel</AlertDialogCancel>
                     <AlertDialogAction
                       onClick={confirmLogout}
-                      className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white"
+                      className="bg-blue-800 hover:bg-blue-900 text-white"
                     >
                       Confirm Logout
                     </AlertDialogAction>
@@ -2630,7 +2630,7 @@ export function Dashboard({ onLogout, userData }: DashboardProps) {
     </div>
 
     {/* Bottom Navigation */}
-    <div className="fixed bottom-0 left-0 right-0 bg-orange-500/95 backdrop-blur-sm text-white p-4 z-10 safe-bottom">
+    <div className="fixed bottom-0 left-0 right-0 bg-blue-800/95 backdrop-blur-sm text-white p-4 z-10 safe-bottom">
       <div className="flex justify-center items-center">
         <span className="text-xs sm:text-sm font-medium">Copyright © 2025 - 2026 | John Lloyd L. Gracilla</span>
       </div>
