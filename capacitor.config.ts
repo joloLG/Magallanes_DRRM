@@ -2,9 +2,9 @@ import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'com.incidentSystem.mdrrmo',
-  appName: 'MDRRMO App Bulan',
+  appName: 'M.E.A.',
   webDir: 'public',
-  server: { url: 'https://mdrrmo-system.vercel.app/', cleartext: false },
+  server: { url: 'https://magallanes-drrm-app.vercel.app/', cleartext: false },
   plugins: {
     StatusBar: {
       style: 'default',
@@ -26,14 +26,7 @@ const config: CapacitorConfig = {
     backgroundColor: '#ffffff',
     scrollEnabled: true
   },
-  server: {
-    url: 'https://mdrrmo-system.vercel.app/',
-    cleartext: false,
-    androidScheme: 'https',
-    allowNavigation: ['*.vercel.app']
-  },
-  loggingBehavior: 'production',
-  bundledWebRuntime: false
+  loggingBehavior: 'production'
 };
 
 export default config;
