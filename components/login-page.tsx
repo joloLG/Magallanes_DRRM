@@ -418,16 +418,16 @@ export function LoginPage({ onLoginSuccess, onGoToRegister, onGoToRoleSelection 
                   <div className="mt-4 pt-4 border-t border-gray-200 space-y-2">
                     <p className="text-xs text-gray-600 font-medium mb-2">Install MDRRMO App:</p>
                     <div className="flex flex-col sm:flex-row gap-2">
-                    {  /* <Button
+                    <Button
                         type="button"
                         variant="outline"
                         size="sm"
                         className="flex-1 text-xs border-blue-600 text-blue-800 hover:bg-blue-100"
-                        onClick={() => window.open('https://github.com/joloLG/MDRRMO-System/releases/tag/1.1.9', '_blank', 'noopener,noreferrer')}
+                        onClick={() => window.open('https://github.com/joloLG/Magallanes_DRRM/releases/tag/1.1.1', '_blank', 'noopener,noreferrer')}
                       >
                         <Download className="w-3 h-3 mr-1" />
                         Download APK
-                      </Button> */}
+                      </Button>
                       {installPromptEvent && (
                         <Button
                           type="button"
