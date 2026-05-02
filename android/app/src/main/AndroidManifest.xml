@@ -15,19 +15,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!-- Splash Activity - Shows custom splash screen with logo and text -->
-        <activity
-            android:name=".SplashActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:exported="true"
-            android:noHistory="true"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
         <activity
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode|navigation"
             android:name=".MainActivity"
@@ -37,6 +24,10 @@
             android:exported="true"
             android:windowSoftInputMode="adjustResize"
             android:hardwareAccelerated="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         
         <!-- Firebase Cloud Messaging Service for Emergency Alerts -->
