@@ -120,7 +120,7 @@ export async function POST(req: NextRequest) {
               if (expiresAt) {
                 lines.push('', `This advisory is in effect until ${new Date(expiresAt).toLocaleString()}.`)
               }
-              lines.push('', 'Stay safe Bulaneños, -MDRRMO-Bulan.')
+              lines.push('', 'Stay safe Magallaneños, -MDRRMO Magallanes.')
               const text = lines.join('\n')
 
               try {

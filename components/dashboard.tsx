@@ -2209,14 +2209,18 @@ export function Dashboard({ onLogout, userData }: DashboardProps) {
                 {bulanHotlines.length === 0 ? (
                   <p className="text-gray-600 text-center py-4">No hotlines available yet. Please check back later.</p>
                 ) : (
-                  <div className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {bulanHotlines.map((hotline) => (
-                      <div key={hotline.id} className="border-b pb-3 last:border-b-0">
-                        <h3 className="text-lg sm:text-xl font-semibold text-gray-800">{hotline.name}</h3>
-                        <p className="text-blue-600 font-medium text-xl sm:text-2xl mt-1">
-                          <a href={`tel:${hotline.number}`} className="hover:underline">{hotline.number}</a>
-                        </p>
-                        {hotline.description && <p className="text-sm sm:text-base text-gray-600 mt-1">{hotline.description}</p>}
+                      <div key={hotline.id} className="border border-gray-200 rounded-lg p-4 bg-white/50 hover:bg-white/70 transition-colors duration-200 min-h-[120px] flex flex-col justify-between">
+                        <div className="flex-1">
+                          <h3 className="text-base sm:text-lg font-semibold text-gray-800 line-clamp-2 leading-tight">{hotline.name}</h3>
+                          <p className="text-blue-600 font-medium text-lg sm:text-xl mt-2 break-words">
+                            <a href={`tel:${hotline.number}`} className="hover:underline">{hotline.number}</a>
+                          </p>
+                          {hotline.description && (
+                            <p className="text-xs sm:text-sm text-gray-600 mt-2 line-clamp-3 leading-relaxed">{hotline.description}</p>
+                          )}
+                        </div>
                       </div>
                     ))}
                   </div>
